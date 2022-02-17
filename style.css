@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(151, 21, 21);
+}
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+.container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70px 200px 300px 300px 70px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "section1"
+    "footer";
+}
+
+header {
+  background-color: rgb(71, 69, 69);
+  color: azure;
+  grid-area: header;
+}
+.side-bar {
+  background-color: rgb(32, 31, 31);
+  color: rgb(255, 255, 255);
+  grid-area: sidebar;
+}
+.content {
+  background-color: rgb(107, 104, 104);
+  color: rgb(246, 233, 233);
+  grid-area: content;
+}
+.section1 {
+  background-color: rgb(194, 194, 194);
+  color: rgb(0, 0, 0);
+  grid-area: section1;
+}
+.foot {
+  background-color: rgb(71, 69, 69);
+  color: azure;
+  grid-area: footer;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 70px 200px 300px 70px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas:
+      "header header header header "
+      "content content content sidebar"
+      "section1 section1 section1 sidebar"
+      "footer footer footer footer";
+  }
+}
+@media screen and (min-width: 1080px) {
+  .container {
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 70px 500px 70px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas:
+      "header header header"
+      "sidebar section1 content "
+      "sidebar section1 content "
+      "footer footer footer ";
+  }
+}
